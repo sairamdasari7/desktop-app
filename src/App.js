@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Desktop1 from './components/Desktop1';
+import Desktop2 from './components/Desktop2';
+import Desktop3 from './components/Desktop3';
+
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Desktop1 />} />
+      <Route path="/desktop1" element={<Desktop1 />} />
+      <Route path="/desktop2" element={<Desktop2 />} />
+      <Route path="/desktop3" element={<Desktop3 />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
